@@ -101,7 +101,7 @@ page-mathjax: false
 
 
 # Friends
-common web: [
+friend: [
     {
     #     title: "Su",
     #     href: "http://su.gallery/"
