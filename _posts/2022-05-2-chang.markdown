@@ -1,14 +1,14 @@
 ---
 layout:     post
 title:      "插件化"
-subtitle:   " \"Hello World, Hello Blog\""
+subtitle:   " \"android插件化的开发\""
 date:       2022-05-01 12:00:00
-author:     "malei"
+author:     "马垒"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
 tags:
-    - 生活
-    - Meta
+    - android
+    - 插件化
 ---
 
 > “Yeah It's on. ”
@@ -24,7 +24,37 @@ xxx
 
 ## 正文
 
-xxx
+### 插件化
+1. Activity的插件化方案
+
+代码
+
+
+```
+public class PulginManager
+{
+ 
+    private static PulginManager pluginmanager=new PulginManager();
+    private Context context;
+    /**
+     * 加载第三方包的类加载器
+     */
+    private DexClassLoader dexClassLoader;
+    //获得包信息 类
+    PackageInfo packageArchiveInfo;
+    Resources resources;
+    public static PulginManager getInstance(){
+        return  pluginmanager;
+    }
+    public  void  setContext(Context context){
+            this.context=context;
+    }
+   /**
+    * @param path  需要类加载器加载包的路径
+    */
+```
+
+
 
 ---
 
