@@ -1,27 +1,13 @@
-# Jekyll and Ruby specific.
-.sass-cache
-_site/*
-Gemfile.lock
-Gemfile
-
-# Bundler related.
-.bundle
-vendor/bundle/
-
-# Other.
-*.orig
-*.core
-*.rej
-*~
-*.swp
+_site
+_posts/_draft
+_posts/_archive
+_archive
+node_modules
+.vscode
 *.log
-*.tmp
-*.bak
-.*\#.*\#$
-
-# OS garbage.
-Thumbs.db
+*.lock
+*.sh
 .DS_Store
-
-# IntelliJ IDEA
-.idea/*
+.jekyll-cache
+*/.DS_Store
+*/*/.DS_Store
