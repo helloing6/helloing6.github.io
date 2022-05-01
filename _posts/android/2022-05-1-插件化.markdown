@@ -9,54 +9,56 @@ catalog: true
 tags: [android, 插件化]
 ---
 
-> “Yeah It's on. ”
+> “ 插件化的研究 ”
 
-
-malei 的 Blog 就这么开通了。
-
-[跳过废话，直接看技术实现 ](#build) 
-
-xxx
+* 什么是插件化？
+* 插件化的用途？
+* 为什么使用插件化？
+* 插件化的未来？
 
 <p id = "build"></p>
 
 ## 正文
 
-### 插件化
-1. Activity的插件化方案
+研究插件化必须要解决三大问题
 
-代码
+* 插件Dex文件的加载
+* 插件资源文件的加载
+* 插件四大组件的管理
 
+## 插件化的历史
 
-```
-public class PulginManager
-{
- 
-    private static PulginManager pluginmanager=new PulginManager();
-    private Context context;
-    /**
-     * 加载第三方包的类加载器
-     */
-    private DexClassLoader dexClassLoader;
-    //获得包信息 类
-    PackageInfo packageArchiveInfo;
-    Resources resources;
-    public static PulginManager getInstance(){
-        return  pluginmanager;
-    }
-    public  void  setContext(Context context){
-            this.context=context;
-    }
-   /**
-    * @param path  需要类加载器加载包的路径
-    */
-```
+* 2014年3月，dynamic-load-apk发布（任玉刚），通过代理ProxyActivity方案解决。
+* 2015年5月，OpenAtlas发布，修改aapt，解决资源合并id冲突问题
+* 2015年8月，DroidPlugin发布（360张勇），hook底层实现。
+* 2015年12月，small发布，新方案解决了资源合并id冲突
+* 2017年6月，Replugin发布（360）
+* 2017年6月，VistualApk发布（滴滴）
 
 
+## 插件化的解决方案
 
----
+### 1）插件Dex解决方案
+*  单ClassLoader：插件Dex与宿主Dex进行合并，通过反射将系统Dex宿主替换为新的Dex数组。（类冲突问题）
+*  多ClassLoader：每个插件都有自己独立的ClassLoader，插件之间完全隔离无法访问。
 
-xxx
+### 2）插件资源解决方案
+*  资源合并：将插件和宿主的资源合并到同一个Resource中，通过反射替换系统的Resources。（存在资源id冲突问题）
+*  资源隔离：每个插件都有自己独立的Resources对象，插件之间完全隔离无法访问。
+
+
+### 3）插件四大组件解决方案
+##### Activity的插件化方案
+*  Hook方案：hook系统+stubActivity预埋
+*  代理方案：使用ProxyActivity代理插件的Activity
+
+##### Service的插件化方案
+
+##### 广播的插件化方案
+
+##### ContentProvider的插件化方案
+
+
 
 ## 后记
 
