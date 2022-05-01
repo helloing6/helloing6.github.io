@@ -6,9 +6,7 @@ date:       2022-05-01 12:00:00
 author:     "马垒"
 header-img: "img/post-bg-2015.jpg"
 catalog: true
-tags:
-    - android
-    - 插件化
+tags: [android, 插件化]
 ---
 
 > “Yeah It's on. ”
