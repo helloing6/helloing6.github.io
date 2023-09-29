@@ -79,7 +79,7 @@ ga_domain: huangxuan.me
 
 # 侧边栏设置 ，目前是头像加个人介绍
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "马垒，客户端娱乐圈 ，编程语言/编译器初心者 <br> An UI/Frontend dev & designer accidentally growing into a compiler/PL hacker."
+sidebar-about-description: " 物来顺应，未来不惧 。当下不杂 ，既往不恋。<br> I like world"
 # sidebar-avatar: https://github.com/Huxpro.png # use absolute URL, seeing it's used in both `/` and `/about/`
 sidebar-avatar: img/avatar-hux-home.jpg
 
